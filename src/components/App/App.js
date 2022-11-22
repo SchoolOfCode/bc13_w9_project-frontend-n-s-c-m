@@ -4,14 +4,25 @@ import {useState} from "react"
 
 
 function App() {
-  const [cards,setCards] = useState([{}])
+  const [cards,setCards] = useState([])
 
   return (
     <div>
     <CreateCard cards={cards} setCards={setCards}/>
-    <p>{cards[0].week}</p>
-    <p>{cards[0].day}</p>
-    <p>{cards[0].topic[0]}</p>
+    <div>
+      {JSON.stringify(cards) != "[]" ?
+      <>
+      <p>{cards[0].week}</p>
+      <p>{cards[0].day}</p>
+      <p>{cards[0].topic[0]}</p>
+      <p>{cards[0].topic[1]}</p>
+      <p>{cards[0].topic[2]}</p>
+      </>
+      :
+      <> <p>Enter some data!</p></>
+      }
+    </div>
+    
 
 
     

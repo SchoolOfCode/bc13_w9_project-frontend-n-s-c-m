@@ -42,8 +42,9 @@ function CreateCard({ cards, setCards }) {
 	}
     function handleClick() {
         const topicsArray = [topic1, topic2, topic3];
-        setCardInput({...cardInput,topic: { topicsArray }})
-        setCards(...cards, cardInput)
+        //setCardInput({...cardInput,topic: { topicsArray }})
+        let newCard = {...cardInput, topic: topicsArray}
+        setCards([...cards,newCard])
         console.log(cardInput)
 
 
