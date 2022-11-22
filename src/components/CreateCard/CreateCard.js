@@ -1,7 +1,19 @@
+/*
+    {
+        week: 1
+        day: "Monday"
+        topic: ["Something", Soemthing2, something3] 
+        references: ["ref1,"etc"]
+    }
+*/
+
 import { useState } from "react";
 
 function CreateCard({ cards, setCards }) {
 	const [cardInput, setCardInput] = useState();
+	const [topic1, setTopic1] = useState("");
+	const [topic2, setTopic2] = useState("");
+	const [topic3, setTopic3] = useState("");
 
 	function handleChangeWeek(e) {
 		console.log(e.target.value);
@@ -14,7 +26,19 @@ function CreateCard({ cards, setCards }) {
 		setCardInput({ ...cardInput, day: dayInput });
 	}
 	function handleChangeTopic1(e) {
+		console.log(e.target.value);
 		let topicInput = e.target.value;
+		setTopic1(topicInput);
+	}
+	function handleChangeTopic2(e) {
+		console.log(e.target.value);
+		let topicInput = e.target.value;
+		setTopic2(topicInput);
+	}
+	function handleChangeTopic3(e) {
+		console.log(e.target.value);
+		let topicInput = e.target.value;
+		setTopic3(topicInput);
 	}
 
 	return (
@@ -26,8 +50,8 @@ function CreateCard({ cards, setCards }) {
 			></input>
 			<input placeholder="Day" onChange={handleChangeDay}></input>
 			<input placeholder="Topic 1" onChange={handleChangeTopic1}></input>
-			<input placeholder="Topic 2"></input>
-			<input placeholder="Topic 3"></input>
+			<input placeholder="Topic 2" onChange={handleChangeTopic2}></input>
+			<input placeholder="Topic 3" onChange={handleChangeTopic3}></input>
 			<img src="" />
 			<button>Click to save</button>
 		</div>
