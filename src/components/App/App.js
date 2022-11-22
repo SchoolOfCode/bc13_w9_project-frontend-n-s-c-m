@@ -1,10 +1,14 @@
 import './App.css';
 import CreateCard from '../CreateCard/CreateCard';
+import {useState} from "react"
+
 
 function App() {
+  const [cards,setCards] = useState([{}])
+
   return (
     <div>
-    <CreateCard/>
+    <CreateCard cards={cards} setCards={setCards}/>
 
 
     
