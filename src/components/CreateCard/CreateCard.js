@@ -40,6 +40,14 @@ function CreateCard({ cards, setCards }) {
 		let topicInput = e.target.value;
 		setTopic3(topicInput);
 	}
+    function handleClick() {
+        const topicsArray = [topic1, topic2, topic3];
+        setCardInput({...cardInput,topic: { topicsArray }})
+        setCards(...cards, cardInput)
+        console.log(cardInput)
+
+
+    }
 
 	return (
 		<div>
@@ -53,7 +61,7 @@ function CreateCard({ cards, setCards }) {
 			<input placeholder="Topic 2" onChange={handleChangeTopic2}></input>
 			<input placeholder="Topic 3" onChange={handleChangeTopic3}></input>
 			<img src="" />
-			<button>Click to save</button>
+			<button onClick={handleClick} >Click to save</button>
 		</div>
 	);
 }

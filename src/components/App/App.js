@@ -9,6 +9,9 @@ function App() {
   return (
     <div>
     <CreateCard cards={cards} setCards={setCards}/>
+    <p>{cards[0].week}</p>
+    <p>{cards[0].day}</p>
+    <p>{cards[0].topic[0]}</p>
 
 
     
