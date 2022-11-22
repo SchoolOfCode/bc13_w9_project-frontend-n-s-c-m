@@ -15,7 +15,8 @@ function App() {
 	return (
 		<div>
 			<CreateCard cards={cards} setCards={setCards} />
-			<DisplayCard cards={cards}></DisplayCard>
+			<div className="cardDisplay"><DisplayCard cards={cards}></DisplayCard></div>
+			
 			{console.log(cards)}
 		</div>
 	);
