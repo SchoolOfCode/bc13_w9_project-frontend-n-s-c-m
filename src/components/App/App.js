@@ -1,16 +1,23 @@
 import "./App.css";
 import CreateCard from "../CreateCard/CreateCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DisplayCard from "../DisplayCard/DisplayCard";
 
-//this is just to help create some cards.
-
 function App() {
-	const hardcodeCards = [
-		{ week: 1, day: "Monday",image: "https://d33wubrfki0l68.cloudfront.net/e6fddcbea146f91d2f3c160f7d56a9391a4740b0/4e758/static/logo-51c754388b198e5bbb0d08a971ebbfa2.png", topic: ["Loops", "arrays", "objects"], references:["https://arrays.com","https://arrays.com", "https://arrays.com"]  },
-		{ week: 2, day: "Tuesday",image: "https://d33wubrfki0l68.cloudfront.net/e6fddcbea146f91d2f3c160f7d56a9391a4740b0/4e758/static/logo-51c754388b198e5bbb0d08a971ebbfa2.png", topic: ["React", "Testing", "loops"], references:["https://arrays.com","https://arrays.com", "https://arrays.com"] },
-	];
-	const [cards, setCards] = useState(hardcodeCards);
+	const [cards, setCards] = useState([]);
+
+	//useEffect to fetch all the cards in the db
+
+	useEffect(() => {
+		async function getCards() {
+			const response = await fetch("http://localhost:3500/api/cards");
+			const data = await response.json();
+			const newCards = data.payload;
+			console.log(newCards);
+			setCards([...newCards]);
+		}
+		getCards();
+	}, []);
 
 	return (
 		<div>
@@ -18,15 +25,13 @@ function App() {
 			<div className="cardDisplay">
 				<DisplayCard cards={cards}></DisplayCard>
 			</div>
-			
+
 			{console.log(cards)}
 		</div>
 	);
-
 }
 
 export default App;
-
 
 /* <div>
     <CreateCard cards={cards} setCards={setCards}/>
@@ -47,3 +52,29 @@ export default App;
       }
     </div> */
 
+//  const hardcodeCards = [
+// 	{
+// 		week: 1,
+// 		day: "Monday",
+// 		image:
+// 			"https://d33wubrfki0l68.cloudfront.net/e6fddcbea146f91d2f3c160f7d56a9391a4740b0/4e758/static/logo-51c754388b198e5bbb0d08a971ebbfa2.png",
+// 		topic: ["Loops", "arrays", "objects"],
+// 		references: [
+// 			"https://arrays.com",
+// 			"https://arrays.com",
+// 			"https://arrays.com",
+// 		],
+// 	},
+// 	{
+// 		week: 2,
+// 		day: "Tuesday",
+// 		image:
+// 			"https://d33wubrfki0l68.cloudfront.net/e6fddcbea146f91d2f3c160f7d56a9391a4740b0/4e758/static/logo-51c754388b198e5bbb0d08a971ebbfa2.png",
+// 		topic: ["React", "Testing", "loops"],
+// 		references: [
+// 			"https://arrays.com",
+// 			"https://arrays.com",
+// 			"https://arrays.com",
+// 		],
+// 	},
+// ];
