@@ -11,7 +11,7 @@ import { useState } from "react";
 import "./CreateCard.css";
 
 function CreateCard({ cards, setCards }) {
-	const [cardInput, setCardInput] = useState();
+	const [cardInput, setCardInput] = useState({image: ""});
 	const [topic1, setTopic1] = useState("");
 	const [topic2, setTopic2] = useState("");
 	const [topic3, setTopic3] = useState("");
@@ -66,9 +66,12 @@ function CreateCard({ cards, setCards }) {
         let newCard = {...cardInput, topic: topicsArray, references: referencesArray}
         setCards([...cards,newCard])
         console.log(cardInput)
-
-
     }
+	function handleImage(e){
+		const imgInput = e.target.value
+		setCardInput({ ...cardInput, image: imgInput});
+
+	}
 
 	return (
 		<div className = "createCard">
@@ -79,14 +82,16 @@ function CreateCard({ cards, setCards }) {
 				type="number"
 			></input>
 			<input placeholder="Day" onChange={handleChangeDay}></input>
+			<img src={cardInput.image} alt="logo here" height="auto" width="100px"/>
+			<input placeholder="Enter image URL" onChange={handleImage}></input>
 			<input placeholder="Topic 1" onChange={handleChangeTopic1}></input>
 			<input placeholder="Topic 2" onChange={handleChangeTopic2}></input>
 			<input placeholder="Topic 3" onChange={handleChangeTopic3}></input>
 			<input placeholder="Reference 1" onChange={handleChangeReference1}></input>
 			<input placeholder="Reference 2" onChange={handleChangeReference2}></input>
             <input placeholder="Reference 3" onChange={handleChangeReference3}></input>
-			<img src=""/>
 			<button className="button" onClick={handleClick} >Click to save</button>
+
 		</div>
 		);
 }
