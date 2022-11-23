@@ -12,6 +12,12 @@ function DisplayCard({ cards }) {
 						return <li>{topic}</li>;
 					})}
 				</ul>
+				<h4>References</h4>
+				<ul>
+					{card.references.map((reference) => {
+						return <li>{reference}</li>;
+					})}
+				</ul>
 			</div>
 		);
 	});

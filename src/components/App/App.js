@@ -7,15 +7,17 @@ import DisplayCard from "../DisplayCard/DisplayCard";
 
 function App() {
 	const hardcodeCards = [
-		{ week: 1, day: "Monday", topic: ["Loops", "arrays", "objects"] },
-		{ week: 2, day: "Tuesday", topic: ["React", "Testing", "loops"] },
+		{ week: 1, day: "Monday", topic: ["Loops", "arrays", "objects"], references:["https://arrays.com","https://arrays.com", "https://arrays.com"]  },
+		{ week: 2, day: "Tuesday", topic: ["React", "Testing", "loops"], references:["https://arrays.com","https://arrays.com", "https://arrays.com"] },
 	];
 	const [cards, setCards] = useState(hardcodeCards);
 
 	return (
 		<div>
 			<CreateCard cards={cards} setCards={setCards} />
-			<div className="cardDisplay"><DisplayCard cards={cards}></DisplayCard></div>
+			<div className="cardDisplay">
+				<DisplayCard cards={cards}></DisplayCard>
+			</div>
 			
 			{console.log(cards)}
 		</div>
@@ -25,12 +27,8 @@ function App() {
 
 export default App;
 
-//plan:
-//1.design object with data (for now)
-//2.
 
-/*
-<div>
+/* <div>
     <CreateCard cards={cards} setCards={setCards}/>
     <div>
       {JSON.stringify(cards) != "[]" ?
@@ -47,5 +45,5 @@ export default App;
       :
       <> <p>Enter some data!</p></>
       }
-    </div>
-      */
+    </div> */
+
