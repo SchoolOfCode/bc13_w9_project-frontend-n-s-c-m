@@ -75,6 +75,7 @@ function CreateCard({ cards, setCards }) {
 
 	return (
 		<div className = "createCard">
+			<h3>Enter resource details</h3>
 			<input
 				placeholder="Week No."
 				onChange={handleChangeWeek}
@@ -89,7 +90,8 @@ function CreateCard({ cards, setCards }) {
 			<input placeholder="Reference 1" onChange={handleChangeReference1}></input>
 			<input placeholder="Reference 2" onChange={handleChangeReference2}></input>
             <input placeholder="Reference 3" onChange={handleChangeReference3}></input>
-			<button onClick={handleClick} >Click to save</button>
+			<button className="button" onClick={handleClick} >Click to save</button>
+
 		</div>
 		);
 }
