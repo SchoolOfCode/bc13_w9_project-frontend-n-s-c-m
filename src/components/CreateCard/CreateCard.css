@@ -1,0 +1,36 @@
+/* * {
+    padding: 0%;
+    margin: 0%;
+    list-style: none;
+    text-decoration: none;
+    color: rgb(10, 10, 10);
+  } */
+  /* .App {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #d5d2d2;
+  } */
+  
+  .createCard {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 350px;
+    background-color: grey;
+    margin: 10px;
+    border: inset thick white;
+    padding: 10px;
+    row-gap: 5px;
+  }
+
+  /* button{
+    width: 40%;
+    height: 40px;
+    margin: 0px 5px;
+    color: green;
+    font-weight: 600;
+  } */
+  
