@@ -14,13 +14,16 @@
     background-color: #d5d2d2;
   } */
   
-  .card {
+  .createCard {
+    display: flex;
+    flex-direction: column;
     width: 250px;
     height: 350px;
     background-color: grey;
     margin: 10px;
     border: inset thick white;
     padding: 10px;
+    row-gap: 5px;
   }
 
   /* button{

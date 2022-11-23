@@ -8,6 +8,7 @@
 */
 
 import { useState } from "react";
+import "./CreateCard.css";
 
 function CreateCard({ cards, setCards }) {
 	const [cardInput, setCardInput] = useState();
@@ -70,7 +71,7 @@ function CreateCard({ cards, setCards }) {
     }
 
 	return (
-		<div>
+		<div className = "createCard">
 			<input
 				placeholder="Week No."
 				onChange={handleChangeWeek}
