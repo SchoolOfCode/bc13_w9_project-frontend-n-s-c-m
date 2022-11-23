@@ -1,13 +1,36 @@
-import './App.css';
-import CreateCard from '../CreateCard/CreateCard';
-import {useState} from "react"
+import "./App.css";
+import CreateCard from "../CreateCard/CreateCard";
+import { useState } from "react";
+import DisplayCard from "../DisplayCard/DisplayCard";
 
+//this is just to help create some cards.
 
 function App() {
-  const [cards,setCards] = useState([])
+	const hardcodeCards = [
+		{ week: 1, day: "Monday", topic: ["Loops", "arrays", "objects"] },
+		{ week: 2, day: "Tuesday", topic: ["React", "Testing", "loops"] },
+	];
+	const [cards, setCards] = useState(hardcodeCards);
 
-  return (
-    <div>
+	return (
+		<div>
+			<CreateCard cards={cards} setCards={setCards} />
+			<div className="cardDisplay"><DisplayCard cards={cards}></DisplayCard></div>
+			
+			{console.log(cards)}
+		</div>
+	);
+
+}
+
+export default App;
+
+//plan:
+//1.design object with data (for now)
+//2.
+
+/*
+<div>
     <CreateCard cards={cards} setCards={setCards}/>
     <div>
       {JSON.stringify(cards) != "[]" ?
@@ -25,16 +48,4 @@ function App() {
       <> <p>Enter some data!</p></>
       }
     </div>
-    
-
-
-    
-    </div>
-  );
-}
-
-export default App;
-
-//plan:
-//1.design object with data (for now)
-//2.
+      */
