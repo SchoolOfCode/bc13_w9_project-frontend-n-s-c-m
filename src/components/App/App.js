@@ -27,8 +27,8 @@ function App() {
 					<CreateCard cards={cards} setCards={setCards}/>
 					</div>
 				<div className = "about">
-				<h1>Hivemind</h1>
-				<p>Lorem Ipsum Gypsum Bipsum</p>
+				<h1 className="title">The hivemind</h1>
+				<p>Here you can keep notes, references, and links related to your SoC schedule. </p>
         </div>
 			</div>
 			<div className="cardDisplay">

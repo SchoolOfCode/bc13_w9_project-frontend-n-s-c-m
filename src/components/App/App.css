@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: Roboto, Arial, sans-serif;
+  font-family: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 }
 
 .App-logo {
@@ -38,20 +38,19 @@
   }
 }
 .header {
-  background-color: #3D3F65;
+  background-color: #000818;
   background-image: url("../../images/planet_soc.png"), url("../../images/stars.webp");
   background-repeat: no-repeat, no-repeat;
   display: flex;
   justify-content: center;
   color: #F7F7F7;
-  animation-delay: 0s;
-animation-direction: normal;
-animation-duration: 200s;
-animation-fill-mode: none;
-animation-iteration-count: infinite;
-animation-name: LandingScreen-module--move-twink-back--3OgsD;
-animation-play-state: running;
-animation-timing-function: linear;
+  animation-delay: 0ms;
+  animation-direction: normal;
+  animation-duration: 100s;
+  animation-fill-mode: none;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: linear;
 }
 
 .cardDisplay {
@@ -69,4 +68,9 @@ animation-timing-function: linear;
   align-items: center;
   justify-content: center;
   width: 70%;
+  font-size: 20px;
+  text-align: left;
+}
+.title {
+  font-size: 50px;
 }
