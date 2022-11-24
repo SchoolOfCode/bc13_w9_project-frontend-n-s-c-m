@@ -23,7 +23,13 @@ function App() {
 		<div>
 			<CreateCard cards={cards} setCards={setCards} />
 			<div className="cardDisplay">
-				<DisplayCard cards={cards}></DisplayCard>
+				{JSON.stringify(cards) !== "[]" ? (
+					<>
+						<DisplayCard cards={cards}></DisplayCard>
+					</>
+				) : (
+					<></>
+				)}
 			</div>
 
 			{console.log(cards)}

@@ -67,21 +67,24 @@ function CreateCard({ cards, setCards }) {
 		// creating an object to post as a fetch request
 		const send = await fetch("http://localhost:3500/api/cards", {
 			method: "POST",
-			headers: {"Content-Type": "application/json"},
-			body: JSON.stringify(newCard)
-		})
-		//setCards([...cards, newCard]);
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(newCard),
+		});
+
 		console.log(cardInput);
-		const thumbsUp = await send.json()
-		console.log(thumbsUp)
+		const thumbsUp = await send.json();
+		console.log(thumbsUp);
 
 		//if statement
-		if (thumbsUp.success === true)  {
-		const response = await fetch("http://localhost:3500/api/cards");
-			const data = await response.json();
-			const newCards = data.payload;
-			console.log(newCards);
-			setCards([newCards]);
+		if (thumbsUp.success === true) {
+			setCards([...cards, thumbsUp.payload]);
+			// let newTrigger = trigger++;
+			// await setTrigger(newTrigger);
+			// const response = await fetch("http://localhost:3500/api/cards");
+			// 	const data = await response.json();
+			// 	const newCards = data.payload;
+			// 	console.log(newCards);
+			// 	setCards([newCards]);
 		}
 	}
 	function handleImage(e) {

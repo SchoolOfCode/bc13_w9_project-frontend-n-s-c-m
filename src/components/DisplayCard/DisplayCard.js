@@ -10,15 +10,23 @@ function DisplayCard({ cards }) {
 					<img src={card.image} alt="logo here" height="50px" />
 					<h4>Topics</h4>
 					<ul>
-						{card.topic.map((topic) => {
-							return <li>{topic}</li>;
-						})}
+						{card.topic !== undefined ? (
+							card.topic.map((topic) => {
+								return <li>{topic}</li>;
+							})
+						) : (
+							<></>
+						)}
 					</ul>
 					<h4>References</h4>
 					<ul>
-						{card.ref.map((reference) => {
-							return <li>{reference}</li>;
-						})}
+						{card.topic !== undefined ? (
+							card.ref.map((reference) => {
+								return <li>{reference}</li>;
+							})
+						) : (
+							<></>
+						)}
 					</ul>
 				</div>
 			);
