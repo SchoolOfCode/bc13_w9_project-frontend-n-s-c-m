@@ -29,12 +29,12 @@ function App() {
 				<div className = "about">
 				<h1>Hivemind</h1>
 				<p>Lorem Ipsum Gypsum Bipsum</p>
-			</div>
+        </div>
 			</div>
 			<div className="cardDisplay">
 				{JSON.stringify(cards) !== "[]" ? (
 					<>
-						<DisplayCard cards={cards}></DisplayCard>
+						<DisplayCard cards={cards} setCards={setCards}></DisplayCard>
 					</>
 				) : (
 					<></>
