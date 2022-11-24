@@ -19,9 +19,9 @@
     flex-wrap: wrap;
     width: 250px;
     height: 350px;
-    background-color: white;
+    background-color: rgb(253, 248, 248);
     margin: 2%;
-    border: 1px solid steelblue;
+    border: 1px solid rgb(108, 217, 144);
     border-radius: 1px;
     padding: 2%;
     text-align: center;
@@ -29,6 +29,9 @@
     overflow-x: hidden;
     overflow-wrap: break-word;
     
+  }
+  .card:hover{
+    box-shadow: 0 0 5px 5px #1b9a39;
   }
 
   .cardTitles {
