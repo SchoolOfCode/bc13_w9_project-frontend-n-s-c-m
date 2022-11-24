@@ -27,7 +27,8 @@ function DisplayCard({ cards }) {
 					<h4>References</h4>
 					<ul className="ul">
 						{card.ref.map((reference) => {
-							return <li className = "liRef">{reference}</li>;
+							return <li className = "liRef"><a href={reference} target="_blank">{reference}</a></li>;
+
 						})}
 					</ul>
 				</div>
