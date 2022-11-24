@@ -30,12 +30,20 @@
     overflow-wrap: break-word;
     
   }
+
+  .cardTitles {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
   .ul {
     text-align: left;
   }
 
   .image{
-    
+    width: 100px;
+    height: auto;
   }
 
   /* button{

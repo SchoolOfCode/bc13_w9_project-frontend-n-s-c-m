@@ -21,7 +21,13 @@ function App() {
 
 	return (
 		<div>
-			<CreateCard cards={cards} setCards={setCards} />
+			<div className = "header">
+			<CreateCard cards={cards} setCards={setCards}/>
+			<div className = "about">
+				<h1>Hivemind</h1>
+				<p>Lorem Ipsum Gypsum Bipsum</p>
+			</div>
+			</div>
 			<div className="cardDisplay">
 				{JSON.stringify(cards) !== "[]" ? (
 					<>
