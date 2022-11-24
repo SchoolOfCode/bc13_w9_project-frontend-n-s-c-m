@@ -5,12 +5,13 @@ function DisplayCard({ cards }) {
 		return cards.map((card) => {
 			return (
 				<div className="card">
+				<div className="cardTitles"> 
 					<h2>Week {card.week}</h2>
-					<h3>{card.day}</h3>
+					<h2>{card.day}</h2></div>
 					<img
 						src={card.image}
 						alt="logo here"
-						height="50px"
+						//height="50px"
 						className="image"
 					/>
 					<h4>Topics</h4>
@@ -26,7 +27,8 @@ function DisplayCard({ cards }) {
 					<h4>References</h4>
 					<ul className="ul">
 						{card.ref.map((reference) => {
-							return <li><a href={reference} target="_blank">{reference}</a></li>;
+							return <li className = "liRef"><a href={reference} target="_blank">{reference}</a></li>;
+
 						})}
 					</ul>
 				</div>
