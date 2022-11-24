@@ -7,9 +7,14 @@ function DisplayCard({ cards }) {
 				<div className="card">
 					<h2>Week {card.week}</h2>
 					<h3>{card.day}</h3>
-					<img src={card.image} alt="logo here" height="50px" />
+					<img
+						src={card.image}
+						alt="logo here"
+						height="50px"
+						className="image"
+					/>
 					<h4>Topics</h4>
-					<ul>
+					<ul className="ul">
 						{card.topic !== undefined ? (
 							card.topic.map((topic) => {
 								return <li>{topic}</li>;
@@ -19,14 +24,10 @@ function DisplayCard({ cards }) {
 						)}
 					</ul>
 					<h4>References</h4>
-					<ul>
-						{card.topic !== undefined ? (
-							card.ref.map((reference) => {
-								return <li>{reference}</li>;
-							})
-						) : (
-							<></>
-						)}
+					<ul className="ul">
+						{card.ref.map((reference) => {
+							return <li>{reference}</li>;
+						})}
 					</ul>
 				</div>
 			);
