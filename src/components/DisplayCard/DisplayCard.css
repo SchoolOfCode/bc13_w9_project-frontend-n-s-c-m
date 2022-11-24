@@ -25,10 +25,13 @@
     border-radius: 20px;
     padding: 2%;
     text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
     
   }
   .ul {
-    text-align: center;
+    text-align: left;
   }
 
   .image{

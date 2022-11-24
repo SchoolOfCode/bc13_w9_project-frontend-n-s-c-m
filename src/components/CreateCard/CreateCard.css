@@ -27,7 +27,7 @@
     row-gap: 5px;
     -ms-grid-row-span: 20px;
     text-align: center;
-    
+    overflow: scroll;
     
   }
 
