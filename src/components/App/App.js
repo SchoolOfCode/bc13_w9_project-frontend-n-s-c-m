@@ -21,12 +21,12 @@ function App() {
 
 	return (
 		<div>
-			<div></div>
+		<div></div>
 			<div className = "header">
 				<div className = "createCardDiv">
 					<CreateCard cards={cards} setCards={setCards}/>
 					</div>
-			<div className = "about">
+				<div className = "about">
 				<h1>Hivemind</h1>
 				<p>Lorem Ipsum Gypsum Bipsum</p>
 			</div>
