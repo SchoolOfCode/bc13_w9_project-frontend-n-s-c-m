@@ -96,6 +96,7 @@ function CreateCard({ cards, setCards }) {
 		<div className="createCard">
 			<h3>Enter resource details</h3>
 			<input
+				className="weekInput"
 				placeholder="Week No."
 				onChange={handleChangeWeek}
 				type="number"
