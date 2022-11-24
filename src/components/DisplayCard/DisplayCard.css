@@ -22,7 +22,7 @@
     background-color: white;
     margin: 2%;
     border: 1px solid steelblue;
-    border-radius: 20px;
+    /*border-radius: 20px;*/
     padding: 2%;
     text-align: center;
     overflow-y: scroll;
@@ -36,6 +36,14 @@
     justify-content: space-evenly;
     align-items: center;
   }
+
+  li {
+    list-style: none;
+  }
+
+  li:not(:last-child) { 
+    margin-bottom: 10px;  
+ }
 
   .ul {
     text-align: left;

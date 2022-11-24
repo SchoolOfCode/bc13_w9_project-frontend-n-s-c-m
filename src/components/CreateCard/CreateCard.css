@@ -18,16 +18,17 @@
     display: flex;
     flex-direction: column;
     width: 250px;
-    height: 350px;
+    height: 350
+  px;
     background-color: white;
     margin: 20px;
     border: 1px solid steelblue;
-    border-radius: 30px;
+    /*border-radius: 30px;*/
     padding: 30px;
     row-gap: 5px;
-    -ms-grid-row-span: 20px;
+    /*-ms-grid-row-span: 20px;*/
     text-align: center;
-    overflow: scroll;
+    overflow: auto;
     
   }
 
