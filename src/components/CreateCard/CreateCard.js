@@ -59,13 +59,30 @@ function CreateCard({ cards, setCards }) {
 		let referenceInput = e.target.value;
 		setReference3(referenceInput);
 	}
-	function handleClick() {
+	async function handleClick() {
 		const topicsArray = [topic1, topic2, topic3];
 		const referencesArray = [reference1, reference2, reference3];
 		//setCardInput({...cardInput,topic: { topicsArray }})
 		let newCard = { ...cardInput, topic: topicsArray, ref: referencesArray };
-		setCards([...cards, newCard]);
+		// creating an object to post as a fetch request
+		const send = await fetch("http://localhost:3500/api/cards", {
+			method: "POST",
+			headers: {"Content-Type": "application/json"},
+			body: JSON.stringify(newCard)
+		})
+		//setCards([...cards, newCard]);
 		console.log(cardInput);
+		const thumbsUp = await send.json()
+		console.log(thumbsUp)
+
+		//if statement
+		if (thumbsUp.success === true)  {
+		const response = await fetch("http://localhost:3500/api/cards");
+			const data = await response.json();
+			const newCards = data.payload;
+			console.log(newCards);
+			setCards([newCards]);
+		}
 	}
 	function handleImage(e) {
 		const imgInput = e.target.value;
