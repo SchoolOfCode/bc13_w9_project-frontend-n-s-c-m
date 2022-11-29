@@ -3,17 +3,6 @@
   font-family: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -44,13 +33,6 @@
   display: flex;
   justify-content: center;
   color: #F7F7F7;
-  animation-delay: 0ms;
-  animation-direction: normal;
-  animation-duration: 100s;
-  animation-fill-mode: none;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-  animation-timing-function: linear;
 }
 
 .cardDisplay {

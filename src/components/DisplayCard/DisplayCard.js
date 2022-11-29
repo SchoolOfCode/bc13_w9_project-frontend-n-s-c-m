@@ -26,8 +26,7 @@ function DisplayCard({ cards, setCards }) {
 					<img
 						src={card.image}
 						alt="logo here"
-						//height="50px"
-						className="image"
+						className="cardImage"
 					/>
 					<h4>Topics</h4>
 					<ul className="ul">

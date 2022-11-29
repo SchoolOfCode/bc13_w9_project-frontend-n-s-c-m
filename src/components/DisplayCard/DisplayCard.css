@@ -1,19 +1,4 @@
-/* * {
-    padding: 0%;
-    margin: 0%;
-    list-style: none;
-    text-decoration: none;
-    color: rgb(10, 10, 10);
-  } */
-  /* .App {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #d5d2d2;
-  } */
-  
+ 
   .card {
     
     flex-wrap: wrap;
@@ -52,7 +37,7 @@
     text-align: left;
   }
 
-  .image{
+  .cardImage{
     width: 80%;
     height: 45%;
   }

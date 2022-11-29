@@ -1,11 +1,3 @@
-/*
-    {
-        week: 1
-        day: "Monday"
-        topic: ["Something", Soemthing2, something3] 
-        references: ["ref1,"etc"]
-    }
-*/
 
 import { useState } from "react";
 import "./CreateCard.css";
@@ -62,9 +54,7 @@ function CreateCard({ cards, setCards }) {
 	async function handleClick() {
 		const topicsArray = [topic1, topic2, topic3];
 		const referencesArray = [reference1, reference2, reference3];
-		//setCardInput({...cardInput,topic: { topicsArray }})
 		let newCard = { ...cardInput, topic: topicsArray, ref: referencesArray };
-		// creating an object to post as a fetch request
 		const send = await fetch("http://localhost:3500/api/cards", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
@@ -75,16 +65,8 @@ function CreateCard({ cards, setCards }) {
 		const thumbsUp = await send.json();
 		console.log(thumbsUp);
 
-		//if statement
 		if (thumbsUp.success === true) {
 			setCards([...cards, thumbsUp.payload]);
-			// let newTrigger = trigger++;
-			// await setTrigger(newTrigger);
-			// const response = await fetch("http://localhost:3500/api/cards");
-			// 	const data = await response.json();
-			// 	const newCards = data.payload;
-			// 	console.log(newCards);
-			// 	setCards([newCards]);
 		}
 	}
 	function handleImage(e) {
@@ -119,7 +101,7 @@ function CreateCard({ cards, setCards }) {
 				placeholder="Reference 3"
 				onChange={handleChangeReference3}
 			></input>
-			<button className="button" onClick={handleClick}>
+			<button className="addCardButton" onClick={handleClick}>
 				Click to save
 			</button>
 		</div>
