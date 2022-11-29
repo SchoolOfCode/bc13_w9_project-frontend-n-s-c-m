@@ -21,15 +21,18 @@ function App() {
 
 	return (
 		<div>
-		<div></div>
-			<div className = "header">
-				<div className = "createCardDiv">
-					<CreateCard cards={cards} setCards={setCards}/>
-					</div>
-				<div className = "about">
-				<h1 className="title">The hivemind</h1>
-				<p>Here you can keep notes, references, and links related to your SoC schedule. </p>
-        </div>
+			<div></div>
+			<div className="header">
+				<div className="createCardDiv">
+					<CreateCard cards={cards} setCards={setCards} />
+				</div>
+				<div className="about">
+					<h1 className="title">Hivemind</h1>
+					<p>
+						Here you can keep notes, references, and links related to your SoC
+						schedule.{" "}
+					</p>
+				</div>
 			</div>
 			<div className="cardDisplay">
 				{JSON.stringify(cards) !== "[]" ? (
