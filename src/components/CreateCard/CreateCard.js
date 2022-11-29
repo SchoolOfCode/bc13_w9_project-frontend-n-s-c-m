@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import "./CreateCard.css";
 
@@ -21,36 +20,13 @@ function CreateCard({ cards, setCards }) {
 		let dayInput = e.target.value;
 		setCardInput({ ...cardInput, day: dayInput });
 	}
-	function handleChangeTopic1(e) {
+
+	function handleChange(e, setState) {
 		console.log(e.target.value);
-		let topicInput = e.target.value;
-		setTopic1(topicInput);
+		let input = e.target.value;
+		setState(input);
 	}
-	function handleChangeTopic2(e) {
-		console.log(e.target.value);
-		let topicInput = e.target.value;
-		setTopic2(topicInput);
-	}
-	function handleChangeTopic3(e) {
-		console.log(e.target.value);
-		let topicInput = e.target.value;
-		setTopic3(topicInput);
-	}
-	function handleChangeReference1(e) {
-		console.log(e.target.value);
-		let referenceInput = e.target.value;
-		setReference1(referenceInput);
-	}
-	function handleChangeReference2(e) {
-		console.log(e.target.value);
-		let referenceInput = e.target.value;
-		setReference2(referenceInput);
-	}
-	function handleChangeReference3(e) {
-		console.log(e.target.value);
-		let referenceInput = e.target.value;
-		setReference3(referenceInput);
-	}
+
 	async function handleClick() {
 		const topicsArray = [topic1, topic2, topic3];
 		const referencesArray = [reference1, reference2, reference3];
@@ -86,20 +62,29 @@ function CreateCard({ cards, setCards }) {
 			<input placeholder="Day" onChange={handleChangeDay}></input>
 			<img src={cardInput.image} alt="logo here" height="auto" width="100px" />
 			<input placeholder="Enter image URL" onChange={handleImage}></input>
-			<input placeholder="Topic 1" onChange={handleChangeTopic1}></input>
-			<input placeholder="Topic 2" onChange={handleChangeTopic2}></input>
-			<input placeholder="Topic 3" onChange={handleChangeTopic3}></input>
+			<input
+				placeholder="Topic 1"
+				onChange={(event) => handleChange(event, setTopic1)}
+			></input>
+			<input
+				placeholder="Topic 2"
+				onChange={(event) => handleChange(event, setTopic2)}
+			></input>
+			<input
+				placeholder="Topic 3"
+				onChange={(event) => handleChange(event, setTopic3)}
+			></input>
 			<input
 				placeholder="Reference 1"
-				onChange={handleChangeReference1}
+				onChange={(event) => handleChange(event, setReference1)}
 			></input>
 			<input
 				placeholder="Reference 2"
-				onChange={handleChangeReference2}
+				onChange={(event) => handleChange(event, setReference2)}
 			></input>
 			<input
 				placeholder="Reference 3"
-				onChange={handleChangeReference3}
+				onChange={(event) => handleChange(event, setReference3)}
 			></input>
 			<button className="addCardButton" onClick={handleClick}>
 				Click to save
