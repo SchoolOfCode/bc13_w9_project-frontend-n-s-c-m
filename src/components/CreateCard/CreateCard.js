@@ -83,7 +83,7 @@ function CreateCard({ cards, setCards }) {
 				onChange={(event) => handleChange(event, setReference2)}
 			></input>
 			<input
-				placeholder="Reference 3"
+				placeholder="Reference 3" className= 'perolito'
 				onChange={(event) => handleChange(event, setReference3)}
 			></input>
 			<button className="addCardButton" onClick={handleClick}>
