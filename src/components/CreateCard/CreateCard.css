@@ -28,7 +28,9 @@
     cursor: pointer;
     font-size: 15px;
   }
-.addCardButton:hover{
-  box-shadow: 0 0 2.5px 2.5px #4A90E2;
+  .addCardButton:hover{
+    box-shadow: 0 0 2.5px 2.5px #4A90E2;
 }
-  
+  .createCard>img {
+    align-self: center;
+ } 
